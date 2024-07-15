@@ -1,0 +1,130 @@
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.navbar-brand{
+    font-size: 2rem;
+    color:black;
+    font-family: 'Lobster',cursive;
+
+}
+.navbar-brand:hover{
+    color: darkgreen;
+}
+.nav-link{
+    margin-right: 10px;
+    margin-left: 10px;
+    color: black;
+    font-family: 'Rubik',sans-serif;
+    text-transform: uppercase;
+}
+.nav-link:hover{
+    color: darkgreen;
+}
+.search{
+    height: 40px;
+    width: 80%;
+    border-radius: 60px;
+    font-family: 'Rubik',sans-serif;
+    outline: none;
+    margin-right: -35px;
+    border: 2px solid rgb(248,26,92);
+}
+.btn0{
+    height: 40px;
+    width: 40%;
+    outline: none;
+    border: none;
+    background:rgb(248,26,92);
+    color: white;
+    border-radius: 60px;
+}
+.main{
+    background: url(./creative/img/bg.jpg)no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    background-position: 50% 50%;
+
+}
+.main h1{
+
+    font-size: 4rem;
+    font-weight: 700;
+}
+.btn1{
+    height: 45px;
+    width: 35%;
+    border: none;
+    outline: none;
+    background-color: rgb(248,26,92);
+    color: white;
+    font-weight: 700;
+    border-radius: 60px;
+
+}
+.btn1:hover{
+    background-color: blue;
+    transition: .5s;
+}
+h1{
+    font-weight: 700;
+}
+.card:hover{
+    -webkit-box-shadow: -2px -2px 46px -14px rgba(0,0,0,0.75);
+-moz-box-shadow: -2px -2px 46px -14px rgba(0,0,0,0.75);
+box-shadow: -2px -2px 46px -14px rgba(0,0,0,0.75);
+transition: .5s;
+}
+.apple{
+    background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(./creative/img/bg.jpg)no-repeat;
+    background-size: cover;
+    height: 80vh;
+    width: 100%;
+
+}
+.apple h1{
+    font-family: 'Lobster',cursive;;
+}
+.news{
+    background-color: black;
+    color: white;
+}
+.btn2{
+    height: 45px;
+    width: 100px;
+    background: white;
+    margin-left: -10px;
+    border: 2px solid white;
+    font-weight: 600;
+}
+
+.news input{
+    height: 45px;
+    width: 55%;
+    border: 2px solid white;
+    outline: none;
+    background: black;
+    color: white;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.news::placeholder{
+    color: white;
+
+}
+.news p{
+    margin: 0;
+}
+.fab{
+    font-size: 2.5rem;
+    padding: 5px;
+    cursor: pointer;
+}
+hr{
+    background: white;
+}
