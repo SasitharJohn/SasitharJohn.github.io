@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .instructions {
+            text-align: left;
+            margin-bottom: 20px;
+            background-color: lightgreen;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+        .number-table {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .number-cell {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .symbol {
+            font-weight: bold;
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Mind Game </h2>
+
+    <div class="instructions">
+        <ol>
+            <li>First, choose any two-digit number.</li>
+            <li>Split the number into its digits and add them together.</li>
+            <li>Subtract the sum from the original number.</li>
+            <li>Find the resulting number's symbol in the table below.</li>
+            <li>Press the "Reveal Your Symbol" button to see the symbol you should have found.</li>
+        </ol>
+    </div>
+
+    <div id="table" class="number-table"></div>
+    <button onclick="playGame()">Reveal Your Symbol</button>
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+    const symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "+", "~"];
+    let specialSymbol;
+
+    // Generate the table with numbers and random symbols
+    function generateTable() {
+        const table = document.getElementById('table');
+        let tableHTML = '';
+
+        // Randomly select a symbol for multiples of 9
+        specialSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+
+        for (let i = 1; i < 100; i++) {
+            const symbol = (i % 9 === 0) ? specialSymbol : symbols[Math.floor(Math.random() * symbols.length)];
+            tableHTML += `<div class="number-cell">${i}: <span class="symbol">${symbol}</span></div>`;
+        }
+        table.innerHTML = tableHTML;
+    }
+
+    // Show the symbol for the correct result based on the user's number
+    function playGame() {
+        document.getElementById('result').innerHTML = `Your symbol is: <span class="symbol">${specialSymbol}</span>`;
+    }
+
+    // Generate the table on page load
+    generateTable();
+</script>
+
+</body>
+</html>
+
