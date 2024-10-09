@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>factorial</title>
+<style>
+body{
+   background-color:lightgreen;
+   margin:0;
+   padding:0;
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   height:100vh;
+}
+.container{
+   max-width:400px;
+   background-color:white;
+   margin-bottom:20px;
+   padding:20px;
+   border-radius:20px;
+   text-align:center;
+}
+h1{
+ color:darkgreen;
+}
+.content{
+   margin-bottom:15px;
+}
+label{
+   display:block;
+   margin-bottom:10px;
+   font-weight:bold;
+}
+input{
+  width:100%;
+  border-radius:20px;
+  padding:10px;
+  margin-bottom:10px;
+  border:2px solid green;
+}
+button{
+  width:75%;
+  background-color:green;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+}
+.result{
+   color:blue;
+   font-weight:bold;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Factorial</h1>
+<div class="content">
+<label for="number">Enter a number</label>
+<input type="text" id="number" placeholder="enter a number">
+<button onclick="fact()">submit</button>
+</div>
+<div class="result" id="result"></div>
+</div>
+<script>
+function fact(){
+ let number=document.getElementById('number').value;
+ let result=document.getElementById('result');
+
+  result.innerHTML='';
+  if(number===''){
+   result.innerHTML='<p>enter value first</p>';
+}
+
+ let num=parseInt(number);
+ let resulttext=1;
+  let i=1;
+  while(i<=num){
+    resulttext=i*resulttext;
+    i++;
+   }
+    result.innerHTML='<p>factorial result is</p>'+resulttext;
+}
+</script>
+</body>

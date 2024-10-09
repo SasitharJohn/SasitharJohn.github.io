@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>leap year</title>
+<style>
+body{
+  background-color:orange;
+  margin:0px;
+  padding:0px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+h1{
+  color:blue;
+}
+.container{
+   max-width:400px;
+   background-color:white;
+   padding:20px;
+   border-radius:20px;
+   text-align:center;
+}
+.content{
+   margin-bottom:20px;
+}
+label{
+  display:block;
+  margin-bottom:15px;
+  font-weight:bold;
+}
+input{
+   width:100%;
+   margin-bottom:10px;
+   padding:10px;
+   border:1px solid green;
+   border-radius:25px;
+}
+.result{
+  color:magenta;
+}
+button{
+   background-color:red;
+   border:none;
+   border-radius:20px;
+   width:100%;
+   padding:10px;
+}
+button:hover{
+   cursor:pointer;
+   background:yellow;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Leap Year</h1>
+<div class="content">
+<label for="leap">Enter the year</label>
+<input type="text" id="input" placeholder="enter the year">
+<button type="submit" onClick="leap()">submit</button>
+</div>
+<div class="result" id="result"></div>
+</div>
+</body>
+<script>
+function leap(){
+let number=document.getElementById('input').value;
+let result=document.getElementById('result');
+result.innerHTML='';
+if(number===''){
+  result.innerHTML='<p>enter a value first</p>';
+  return;
+}
+let year=parseInt(number);
+let resulttext;
+if(year%4==0&&year%100!=0||year%400==0){
+   resulttext='<p>leap year</p>'
+ }
+else{
+    resulttext='<p>not leap year</p>'
+}
+result.innerHTML=resulttext;
+}
+</script>
+</html>

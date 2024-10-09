@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>odd or even</title>
+<style>
+body{
+   background-color:cyan;
+   margin:0;
+   padding:0;
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   height:100vh;
+}
+.container{
+   max-width:400px;
+   background-color:white;
+   padding:20px;
+   border-radius:15px;
+   box-shadow:0 4px 8px rgba(0,0,0,0.1);
+   text-align:center;
+}
+h1{
+ color:green;
+}
+.content{
+  margin-bottom:20px;
+  margin-top:40px;
+}
+label{
+ display:block;
+ margin-bottom:10px;
+ font-weight:bold;
+}
+input{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+  border:1px solid red;
+  border-radius:10px;
+}
+.result{
+   color:red;
+}
+button{
+   background-color:blue;
+   border-radius:20px;
+   border:none;
+   padding:10px;
+   width:50%;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>odd or Even</h1>
+<div class="content">
+<label for="number">Enter a number</label>
+<input type="number" id="number" placeholder="enter a number">
+<button onclick="find()">submit</button>
+</div>
+<div class="result" id="result"></div>
+</div>
+</body>
+<script>
+ function find(){
+  let number=document.getElementById('number').value;
+  let result=document.getElementById('result');
+   result.innerHTML='';
+    let num=parseInt(number);
+    let resulttext;
+   if(number===''){
+    result.innerHTML='<p class="empty">enter correct number</p>';
+    return;
+    }
+ 
+   if(num===0){
+      resulttext='<p class="neutral">num is zero is neutral</p>'
+       }
+   else if(num%2===0){
+       resulttext='<p>number is even</p>'
+       }
+   else {
+       resulttext='<p>number is odd</p>'
+     }
+   
+   result.innerHTML=resulttext;
+   
+   }
+</script>
+</html>
